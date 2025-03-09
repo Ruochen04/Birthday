@@ -36,7 +36,7 @@ h1 {
 /* Choices container (Stacked vertically) */
 .choices {
     position: absolute;
-    top: 25%; /* Adjusted position */
+    top: 20%; /* Adjusted position */
     left: 90%;
     transform: translate(-50%, 0);
     display: flex;
@@ -52,9 +52,9 @@ h1 {
 
 /* Style the text above the images */
 .choice p {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
-    color: white;
+    color: black;
     margin-bottom: 5px;
 }
 
