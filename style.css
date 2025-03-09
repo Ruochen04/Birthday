@@ -8,27 +8,63 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    text-align: center;
 }
 
-/* Center the text box */
+/* Center the question */
 .content {
     position: absolute;
-    top: 20%; /* Adjusted for better positioning */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Keep it centered */
-    text-align: center;
-    background: rgba(0, 0, 0, 0.6); /* Slightly darker for contrast */
-    padding: 10px 20px; /* Less padding since no paragraph */
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
     border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Softer shadow */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Style for the header */
 h1 {
-    font-size: 48px; /* Slightly smaller for balance */
+    font-size: 48px;
     font-family: "Arial", sans-serif;
     font-weight: bold;
     color: white;
-    margin: 0; /* Remove bottom margin since no paragraph */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Softer shadow */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Choices container */
+.choices {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 50px; /* Space between Yes and No boxes */
+}
+
+/* Individual choice */
+.choice {
+    text-align: center;
+}
+
+/* Style the text above the images */
+.choice p {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Style for the images */
+.choice img {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for images */
+.choice img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
 }
