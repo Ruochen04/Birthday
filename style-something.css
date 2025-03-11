@@ -1,0 +1,66 @@
+/* ---------- Global Styles for index.html ---------- */
+
+body {
+    background-image: url("./images/lw3kl94s69nb1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+.content {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.content h1 {
+    font-size: 48px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.choices {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.choice {
+    text-align: center;
+}
+
+.choice p {
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.choice img {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.choice img:hover {
+    transform: scale(1.1);
+}

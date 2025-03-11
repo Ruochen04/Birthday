@@ -1,24 +1,25 @@
-// Wait for the page to load before running JavaScript
 document.addEventListener("DOMContentLoaded", function() {
-    // Get the red flash overlay element
-    const flashOverlay = document.getElementById("flash-overlay");
+    // Get the "None of the Above" button
+    const noneButton = document.querySelector(".none");
 
-    // Add click event listeners to each answer button
+    // Add event listeners to each answer button (first four)
     const answerButtons = document.querySelectorAll(".answer");
     answerButtons.forEach(button => {
         button.addEventListener("click", function() {
-            // Show the red flash overlay
-            flashOverlay.classList.add("flash-active");
-            // After 0.5 seconds, remove the flash and hide the clicked button
+            // Add the flash-red effect only to the clicked button
+            button.classList.add("flash-red");
+            // Hide the "None of the Above" button if it's visible
+            if (noneButton) {
+                noneButton.style.display = "none";
+            }
+            // After 0.5 seconds, hide the clicked button completely
             setTimeout(() => {
-                flashOverlay.classList.remove("flash-active");
                 button.style.display = "none";
             }, 500);
         });
     });
 
     // Handle the "None of the Above" button separately
-    const noneButton = document.querySelector(".none");
     if (noneButton) {
         noneButton.addEventListener("click", function() {
             noneButton.textContent = "Narcissist";
