@@ -1,27 +1,28 @@
 // Wait for the page to load before running JavaScript
 document.addEventListener("DOMContentLoaded", function() {
+    // Get the red flash overlay element
+    const flashOverlay = document.getElementById("flash-overlay");
 
-    // ✅ Function to flash the entire screen red before fading back to normal
+    // Add click event listeners to each answer button
     const answerButtons = document.querySelectorAll(".answer");
-
     answerButtons.forEach(button => {
         button.addEventListener("click", function() {
-            document.body.classList.add("flash-red"); // Apply full-screen red flash
-
-            // Remove flash effect after 0.5s
+            // Show the red flash overlay
+            flashOverlay.classList.add("flash-active");
+            // After 0.5 seconds, remove the flash and hide the clicked button
             setTimeout(() => {
-                document.body.classList.remove("flash-red");
-                button.style.display = "none"; // Hide clicked button
-            }, 500); // Adjust timing if needed
+                flashOverlay.classList.remove("flash-active");
+                button.style.display = "none";
+            }, 500);
         });
     });
 
-    // ✅ Function to replace "None of the Above" with "Narcissist"
+    // Handle the "None of the Above" button separately
     const noneButton = document.querySelector(".none");
-
-    noneButton.addEventListener("click", function() {
-        noneButton.textContent = "Narcissist"; // Replace text instead of moving it
-        noneButton.classList.add("shake"); // Apply shake effect
-    });
-
+    if (noneButton) {
+        noneButton.addEventListener("click", function() {
+            noneButton.textContent = "Narcissist";
+            noneButton.classList.add("shake");
+        });
+    }
 });
