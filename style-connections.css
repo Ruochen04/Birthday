@@ -1,0 +1,89 @@
+/* ---------- Global Styles for the Connections Game Page ---------- */
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.5s ease-out;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  /* ---------- Grid Container ---------- */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* ---------- Grid Items ---------- */
+  .grid-item {
+    background-color: white;
+    border: 2px solid #ccc;
+    padding: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .grid-item:hover {
+    background-color: #eaeaea;
+  }
+  
+  /* ---------- Selected State ---------- */
+  .grid-item.selected {
+    background-color: #b3e5fc;
+    border-color: #0288d1;
+  }
+  
+  /* ---------- Solved States for Each Group ---------- */
+  .grid-item.solved-group1 {
+    background-color: #FFEB3B;  /* Yellow */
+    border-color: #FBC02D;
+    cursor: default;
+  }
+  
+  .grid-item.solved-group2 {
+    background-color: #A5D6A7;  /* Green */
+    border-color: #66BB6A;
+    cursor: default;
+  }
+  
+  .grid-item.solved-group3 {
+    background-color: #81D4FA;  /* Lighter Blue */
+    border-color: #29B6F6;
+    cursor: default;
+  }
+  
+  .grid-item.solved-group4 {
+    background-color: #CE93D8;  /* Purple */
+    border-color: #AB47BC;
+    cursor: default;
+  }
+  
+  /* ---------- Next Button Styles ---------- */
+  #next-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    background-color: #0288d1;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #next-button:hover {
+    background-color: #0277bd;
+  }
+  

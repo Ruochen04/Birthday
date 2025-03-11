@@ -1,7 +1,6 @@
 /* ---------- Global Styles for index.html ---------- */
-
 body {
-    background-image: url("./images/lw3kl94s69nb1.jpg");
+    background-image: url("./images/lw3kl94s69nb1.jpg");  /* Ensure this path is correct */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -12,6 +11,7 @@ body {
     text-align: center;
 }
 
+/* ---------- Question Container ---------- */
 .content {
     position: absolute;
     top: 15%;
@@ -32,6 +32,7 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* ---------- Choices Container ---------- */
 .choices {
     position: absolute;
     top: 50%;
@@ -43,6 +44,7 @@ body {
     gap: 20px;
 }
 
+/* ---------- Choice Styles ---------- */
 .choice {
     text-align: center;
 }
