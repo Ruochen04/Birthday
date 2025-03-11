@@ -6,30 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yes Page</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Link to CSS -->
+    <!-- Shared CSS -->
 </head>
 
 <body>
 
     <!-- Question at the top -->
-    <div class="question">
+    <div class="yes-container">
         <h1>Which of these best describes you?</h1>
     </div>
 
     <!-- Answer choices -->
-    <div class="choices">
-        <button class="answer" onclick="flashRed()">Kind</button>
-        <button class="answer" onclick="flashRed()">Smart</button>
-        <button class="answer" onclick="flashRed()">Funny</button>
-        <button class="answer" onclick="flashRed()">Loyal</button>
-        <button class="none" onclick="showNarcissist()">None of the Above</button>
+    <div class="yes-choices">
+        <button class="answer">Kind</button>
+        <button class="answer">Smart</button>
+        <button class="answer">Funny</button>
+        <button class="answer">Loyal</button>
+        <button class="none">None of the Above</button>
     </div>
 
-    <!-- Narcissist Text (Initially Hidden) -->
-    <div id="narcissist-text">Narcissist</div>
-
     <script src="script.js"></script>
-    <!-- Link JavaScript -->
+    <!-- JavaScript for Effects -->
 </body>
 
 </html>

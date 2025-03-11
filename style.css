@@ -1,8 +1,8 @@
-/* Background image settings for index.html and yes.html */
+/* ✅ Background Image Settings */
 
 body {
     background-image: url("./images/lw3kl94s69nb1.jpg");
-    /* Change if needed */
+    /* Make sure the path is correct */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,10 +14,9 @@ body {
 }
 
 
-/* Center the question */
+/* ✅ Styles for Main Page (index.html / something.html) */
 
-.content,
-.question {
+.content {
     position: absolute;
     top: 15%;
     left: 50%;
@@ -29,21 +28,63 @@ body {
 }
 
 
-/* Style for the header */
+/* ✅ "Are you Audrey Cho?" - Keep White */
 
-h1 {
+.content h1 {
     font-size: 48px;
     font-family: "Arial", sans-serif;
     font-weight: bold;
-    color: white;
+    color: white !important;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 
-/* Choices container */
+/* ✅ Keeps Yes/No buttons aligned correctly */
 
 .choices {
+    position: absolute;
+    top: 20%;
+    left: 90%;
+    transform: translate(-50%, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* ✅ Button Sizes */
+
+.choice img {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.choice img:hover {
+    transform: scale(1.1);
+}
+
+
+/* ✅ Styles for the Yes Page (yes.html) */
+
+.yes-container {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ✅ Keeps Yes Page Answer Choices Aligned */
+
+.yes-choices {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -55,11 +96,10 @@ h1 {
 }
 
 
-/* Button styling for answers */
+/* ✅ Button Styles */
 
 .answer,
 .none {
-    display: block;
     width: 250px;
     padding: 12px;
     margin: 10px;
@@ -69,6 +109,9 @@ h1 {
     border-radius: 5px;
     transition: 0.3s;
 }
+
+
+/* ✅ Normal Answer Buttons */
 
 .answer {
     background-color: white;
@@ -80,7 +123,7 @@ h1 {
 }
 
 
-/* "None of the Above" button */
+/* ✅ "None of the Above" Button */
 
 .none {
     background-color: black;
@@ -92,18 +135,7 @@ h1 {
 }
 
 
-/* Narcissist text (Hidden by default) */
-
-#narcissist-text {
-    display: none;
-    font-size: 32px;
-    color: red;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-
-/* Shake animation */
+/* ✅ Shake Animation */
 
 @keyframes shake {
     0% {
@@ -123,18 +155,16 @@ h1 {
     }
 }
 
-
-/* Apply shake animation when triggered */
-
 .shake {
     animation: shake 0.5s ease-in-out;
 }
 
 
-/* Flash red effect */
+/* ✅ Flash Red Effect */
 
 .flash-red {
-    animation: flash 0.5s;
+    background-color: red !important;
+    animation: flash 0.5s ease-in-out;
 }
 
 @keyframes flash {
