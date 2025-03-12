@@ -1,37 +1,54 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Get all answer buttons (excluding the "None of the Above" button)
+    // Select the primary answer buttons (".answer") and the "None of the Above" button (".none")
     const answerButtons = document.querySelectorAll(".answer");
-    // Keep track of how many answer buttons remain visible
-    let remainingAnswers = answerButtons.length;
-    
-    // Get the "None of the Above" button (if it exists)
     const noneButton = document.querySelector(".none");
-    
+
+    // Function to check if all buttons are hidden
+    function checkAllHidden() {
+        let allHidden = true;
+        answerButtons.forEach(button => {
+            if (button.style.display !== "none") {
+                allHidden = false;
+            }
+        });
+        if (noneButton && noneButton.style.display !== "none") {
+            allHidden = false;
+        }
+        if (allHidden) {
+            // All buttons are hidden; redirect to connections.html after a short delay
+            setTimeout(() => {
+                window.location.href = "connections.html";
+            }, 500);
+        }
+    }
+
+    // Add click event listeners to each primary answer button
     answerButtons.forEach(button => {
         button.addEventListener("click", function() {
-            // Add red flash effect to the clicked button
+            // Add the red flash effect
             button.classList.add("flash-red");
-            // Hide the "None of the Above" button if it's visible
+            // Hide "None of the Above" button immediately if it's visible
             if (noneButton) {
                 noneButton.style.display = "none";
             }
-            // After 0.5 seconds, hide the clicked button and update the counter
+            // After 0.5 seconds, hide the clicked button and check if all buttons are hidden
             setTimeout(() => {
                 button.style.display = "none";
-                remainingAnswers--;
-                // If all answer buttons are hidden, redirect to connections.html
-                if (remainingAnswers === 0) {
-                    window.location.href = "connections.html";
-                }
+                checkAllHidden();
             }, 500);
         });
     });
-    
-    // Handle the "None of the Above" button separately
+
+    // Add click event listener for the "None of the Above" button
     if (noneButton) {
         noneButton.addEventListener("click", function() {
             noneButton.textContent = "Narcissist";
             noneButton.classList.add("shake");
+            // After 0.5 seconds, hide the "None" button and check if all buttons are hidden
+            setTimeout(() => {
+                noneButton.style.display = "none";
+                checkAllHidden();
+            }, 500);
         });
     }
 });

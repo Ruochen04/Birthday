@@ -1,18 +1,21 @@
 /* ---------- Global Styles for yes.html ---------- */
+
 body {
-    background-image: url("./images/yespage.png");  /* New background image for yes page */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url("./images/yespage.png");
+    /* Update with your background image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    text-align: center;
     font-family: 'Playfair Display', serif;
+    text-align: center;
 }
 
+
 /* ---------- Answer Choices Container for Larger Screens ---------- */
+
 .yes-choices {
     position: absolute;
     bottom: 15%;
@@ -22,10 +25,13 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    min-height: 350px;  /* Maintains container height */
+    /* Fixed height to prevent layout shift when buttons are removed */
+    min-height: 350px;
 }
 
+
 /* ---------- Button Styles ---------- */
+
 .answer,
 .none {
     width: 250px;
@@ -35,7 +41,7 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: background-color 0.3s, opacity 0.5s;
     font-family: 'Playfair Display', serif;
 }
 
@@ -57,40 +63,57 @@ body {
     background-color: darkgray;
 }
 
+
 /* ---------- Flash Red Effect (for fading out the button) ---------- */
+
 .flash-red {
     background-color: red !important;
     opacity: 0;
     transition: opacity 0.5s ease-out;
 }
 
+
 /* ---------- Shake Animation for "None of the Above" ---------- */
+
 @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .shake {
     animation: shake 0.5s ease-in-out;
 }
 
+
 /* ---------- Responsive Adjustments for Smaller Screens ---------- */
+
 @media (max-width: 768px) {
-  .yes-choices {
-    position: relative !important;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    /* Push the container down; adjust the value as needed */
-    margin: 40vh auto 0 auto;
-    width: 90%;
-    min-height: auto;
-  }
-  .answer, .none {
-    width: 100%;
-    font-size: 20px;
-  }
+    .yes-choices {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin: 40vh auto 0 auto;
+        /* Adjust this value to push the container lower if needed */
+        width: 90%;
+        min-height: auto;
+    }
+    .answer,
+    .none {
+        width: 100%;
+        font-size: 20px;
+    }
 }

@@ -1,78 +1,115 @@
-/* ---------- Global Styles for the Connections Game Page ---------- */
+/* Remove default margin/padding from body */
+
 body {
-    background-color: #f7f7f7;
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url("./images/pretty.png");
+    /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
     text-align: center;
-    transition: opacity 0.5s ease-out;
-  }
-  
-  .fade-out {
-    opacity: 0;
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-  }
-  
-  /* ---------- Grid Container ---------- */
-  .grid-container {
+}
+
+
+/* Reset default heading margins */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Style the page title */
+
+h1 {
+    color: white;
+    /* Adjust if your background is bright/dark */
+    margin: 20px 0;
+    /* Manual top/bottom margin for spacing */
+}
+
+
+/* Grid container with optional semi-transparent background behind cells */
+
+.grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     max-width: 600px;
     margin: 0 auto;
-  }
-  
-  /* ---------- Grid Items ---------- */
-  .grid-item {
+    /* Center horizontally */
+    padding: 10px;
+    /* Optional: space around the grid */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+}
+
+
+/* Grid items */
+
+.grid-item {
     background-color: white;
     border: 2px solid #ccc;
     padding: 20px;
     font-size: 24px;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
-  }
-  
-  .grid-item:hover {
+}
+
+.grid-item:hover {
     background-color: #eaeaea;
-  }
-  
-  /* ---------- Selected State ---------- */
-  .grid-item.selected {
+}
+
+
+/* Selected state */
+
+.grid-item.selected {
     background-color: #b3e5fc;
     border-color: #0288d1;
-  }
-  
-  /* ---------- Solved States for Each Group ---------- */
-  .grid-item.solved-group1 {
-    background-color: #FFEB3B;  /* Yellow */
+}
+
+
+/* Solved states (colors) */
+
+.grid-item.solved-group1 {
+    background-color: #FFEB3B;
     border-color: #FBC02D;
     cursor: default;
-  }
-  
-  .grid-item.solved-group2 {
-    background-color: #A5D6A7;  /* Green */
+}
+
+.grid-item.solved-group2 {
+    background-color: #A5D6A7;
     border-color: #66BB6A;
     cursor: default;
-  }
-  
-  .grid-item.solved-group3 {
-    background-color: #81D4FA;  /* Lighter Blue */
+}
+
+.grid-item.solved-group3 {
+    background-color: #81D4FA;
     border-color: #29B6F6;
     cursor: default;
-  }
-  
-  .grid-item.solved-group4 {
-    background-color: #CE93D8;  /* Purple */
+}
+
+.grid-item.solved-group4 {
+    background-color: #CE93D8;
     border-color: #AB47BC;
     cursor: default;
-  }
-  
-  /* ---------- Next Button Styles ---------- */
-  #next-button {
-    margin-top: 20px;
+}
+
+
+/* Next button styles */
+
+#next-button {
+    display: none;
+    /* Hidden until game is solved */
+    margin: 20px auto 0 auto;
     padding: 10px 20px;
     font-size: 20px;
     border: none;
@@ -81,9 +118,8 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  #next-button:hover {
+}
+
+#next-button:hover {
     background-color: #0277bd;
-  }
-  
+}

@@ -1,6 +1,8 @@
 /* ---------- Global Styles for the Letter Page ---------- */
+
 body {
-    background-image: url("./yespage.jpg");  /* Replace with your desired background */
+    background-image: url("./images/finalletter.png");
+    /* Replace with your desired background */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -9,21 +11,25 @@ body {
     padding: 20px;
     font-family: Arial, sans-serif;
     text-align: center;
-    opacity: 0;  /* Start hidden for fade-in */
-  }
-  
-  .fade-in {
+    opacity: 0;
+    /* Start hidden for fade-in */
+}
+
+.fade-in {
     animation: fadeIn 0.5s forwards;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  h1 {
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
     font-size: 48px;
     margin-bottom: 20px;
     color: white;
-  }
-  
+}
